@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080" # Map the app's port to the host
+    depends_on:
+      - memcached
+    environment:
+      - MEMCACHED_HOST=memcached
+      - MEMCACHED_PORT=11211
+
+  memcached:
+    image: memcached:alpine
+    ports:
+      - "11211:11211" # Expose Memcached's default port

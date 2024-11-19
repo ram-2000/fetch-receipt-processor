@@ -1,0 +1,5 @@
+# Ignore local files and directories
+.git
+node_modules
+*.log
+*.env
