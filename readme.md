@@ -13,6 +13,8 @@ This project is a Receipt Processing API developed as part of a technical challe
 - **Tools and Libraries:**
   - `github.com/bradfitz/gomemcache/memcache`: Memcached Go client
   - `github.com/google/uuid`: For generating unique receipt IDs
+- **Logging:**
+  - The application includes detailed logging for key operations like receipt processing, Memcached interactions, and error handling.
 
 ---
 
@@ -113,6 +115,24 @@ This project is a Receipt Processing API developed as part of a technical challe
    ```
 
 Replace `<id>` with the receipt ID returned from the `/receipts/process` response.
+
+---
+
+## Logs
+
+Detailed logs are implemented for key application operations:
+
+1. **Receipt Processing:**
+   - Logs the successful processing and storage of receipts.
+   - Logs any errors during data parsing or storage.
+
+2. **Memcached Interactions:**
+   - Logs successful connections and any errors during data retrieval or saving.
+
+3. **Error Handling:**
+   - Logs any unexpected errors with detailed information for debugging.
+
+Logs are displayed in the container console during runtime for easy monitoring.
 
 ---
 
